@@ -2,22 +2,32 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="style.css">
-    <title>24 Game Checker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#112618">
 
+    <title>24 Game Checker</title>
+
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+ 
 </head>
 <body>
     <div class="app-container">
+        <div class="header">
+            <div class="header-badge">♠ ♥ ♦ ♣</div>
+            <h1>24 Game</h1>
+            <p class="subtitle">Use all four cards to make 24</p>
+        </div>
         <div class="card">
-            <h1>24 Game Checker</h1>
-            <p class="subtitle">Can these cards make 24?</p>
+            <!--<h1>24 Game Checker</h1>-->
+            <p class="card-section-label">Your cards</p>
+            <!--<p class="subtitle">Your cards</p>-->
             <div class="cards-row">
                 <div class="card-wrapper">
-                    <select id="n1" class="playing-card">
+                    <select id="n1" class="playing-card" onchange="this.classList.add('has-value')">
                         <option value="" disabled selected hidden>Select</option>
                         <option value="A">Ace</option>
                         <option value="2">2</option>
@@ -37,7 +47,7 @@
                     </select>
                 </div>
                 <div class="card-wrapper">
-                    <select id="n2" class="playing-card">
+                    <select id="n2" class="playing-card" onchange="this.classList.add('has-value')">
                         <option value="" disabled selected hidden>Select</option>
                         <option value="A">Ace</option>
                         <option value="2">2</option>
@@ -57,7 +67,7 @@
                     </select>
                 </div>
                 <div class="card-wrapper">
-                    <select id="n3" class="playing-card">
+                    <select id="n3" class="playing-card" onchange="this.classList.add('has-value')">
                         <option value="" disabled selected hidden>Select</option>
                         <option value="A">Ace</option>
                         <option value="2">2</option>
@@ -77,7 +87,7 @@
                     </select>
                 </div>
                 <div class="card-wrapper">
-                    <select id="n4" class="playing-card">
+                    <select id="n4" class="playing-card" onchange="this.classList.add('has-value')">
                         <option value="" disabled selected hidden>Select</option>
                         <option value="A">Ace</option>
                         <option value="2">2</option>
@@ -95,9 +105,11 @@
                         <option value="11">11</option>
                         <option value="1">1</option>
                     </select>
-                 </div>
-             </div>
-                <button class="primary-btn" onclick="check24()">Check</button>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="btn-group">
+                <button class="primary-btn" onclick="check24()">Check →</button>
 
                 <div id="result"></div>
                 <button id="revealBtn"
@@ -106,10 +118,12 @@
                         style="display:none;">
                     Reveal Solution
                 </button>
-
-                <div id="solution"></div>
-
             </div>
+            <div id="result"></div>
+            <div id="solution"></div>
+
+        </div>
+        <p class="footer-note">Use +  −  ×  ÷  and parentheses</p>
     </div>
     <script src="script.js"></script>
 </body>
