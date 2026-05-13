@@ -36,6 +36,10 @@ function generateHands(inputs) {
     return hands;
 }
 
+function getRandomPhrase(phrases) {
+    return phrases[Math.floor(Math.random() * phrases.length)];
+}
+
 function check24() {
 
     savedSolution = "";
@@ -78,17 +82,22 @@ function check24() {
 
     const solvablePhrases = [
         "✅ Come on! You can make 24!",
+        "✅ Come on Fad! You can make 24!",
         "✅ It's in there — keep thinking!",
         "✅ Yes! These cards have a solution.",
         "✅ Don't give up, there's a way!",
         "✅ A 24 is hiding in those numbers…",
-        "✅ I believe in you. You are the CEO of numbers"
+        "✅ I believe in you. You are the CEO of numbers",
+        "✅ Come on Cor! You are the CEO of numbers",
+        "✅ You got this Cor! Its your day off"
     ];
     const unsolvablePhrases = [
         "❌ No solution this time.",
         "❌ These cards can't make 24.",
         "❌ Not every hand is a winner!",
-        "❌ Dead end — try a new deal."
+        "❌ Dead end — try a new deal.",
+        "❌ You are right Cor - it cant be solved.",
+        "❌ You were right to check. No solution."
     ];
 
     if (result) {
