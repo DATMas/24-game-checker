@@ -75,18 +75,34 @@ function check24() {
 
     console.log(inputs);
 
+
+    const solvablePhrases = [
+        "✅ Come on! You can make 24!",
+        "✅ It's in there — keep thinking!",
+        "✅ Yes! These cards have a solution.",
+        "✅ Don't give up, there's a way!",
+        "✅ A 24 is hiding in those numbers…",
+        "✅ I believe in you. You are the CEO of numbers"
+    ];
+    const unsolvablePhrases = [
+        "❌ No solution this time.",
+        "❌ These cards can't make 24.",
+        "❌ Not every hand is a winner!",
+        "❌ Dead end — try a new deal."
+    ];
+
     if (result) {
 
-        document.getElementById("result").innerText =
-            "✅ Come on Fad! You can make 24!";
+        document.getElementById("result").innerText = getRandomPhrase(solvablePhrases);
+            //"✅ Come on Fad! You can make 24!";
 
         document.getElementById("revealBtn").style.display =
             "inline";
 
     } else {
 
-        document.getElementById("result").innerText =
-            "❌ Cannot make 24";
+        document.getElementById("result").innerText = getRandomPhrase(unsolvablePhrases);
+            //"❌ Cannot make 24";
 
         document.getElementById("revealBtn").style.display =
             "none";
