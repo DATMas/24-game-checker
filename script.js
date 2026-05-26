@@ -127,6 +127,13 @@ function showSolution() {
 function judgePoint24(nums) {
     const EPSILON = 1e-6;
 
+    // Read the toggle — true means "whole numbers only"
+    const wholeOnly = document.getElementById("wholeToggle").checked;
+
+    function isInteger(n) {
+        return Math.abs(n - Math.round(n)) < EPSILON;
+    }
+
     function backtrack(numbers) {
 
         // Base case
@@ -161,6 +168,8 @@ function judgePoint24(nums) {
                     let results = compute(numbers[i], numbers[j]);
 
                     for (let r of results) {
+                        // Skip non-integer intermediates when toggle is on
+                        if (wholeOnly && !isInteger(r.value)) continue;
 
                         next.push(r);
 
